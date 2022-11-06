@@ -18,13 +18,16 @@ export default class Header extends Component {
                     <div className="collapse navbar-collapse" id="collapsibleNavId">
                         <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                             <li className="nav-item">
-                                <NavLink className="nav-link active" to="/" aria-current="page">Home <span className="visually-hidden">(current)</span></NavLink>
+                                <NavLink className={({ isActive }) => isActive ? 'nav-link active bg-dark text-white' : 'nav-link'} style={({ isActive }) => isActive ? { fontSize: 30 } : {}} to="/home" aria-current="page">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/login">Login</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? 'nav-link active bg-dark text-white' : 'nav-link'} style={({ isActive }) => isActive ? { fontSize: 30 } : {}} to="/login">Login</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/register">Register</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? 'nav-link active bg-dark text-white' : 'nav-link'} style={({ isActive }) => isActive ? { fontSize: 30 } : {}} to="/register">Register</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className={({ isActive }) => isActive ? 'nav-link active bg-dark text-white' : 'nav-link'} style={({ isActive }) => isActive ? { fontSize: 30 } : {}} to="/form">Form</NavLink>
                             </li>
                             {/* <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
