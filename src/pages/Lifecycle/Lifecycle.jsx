@@ -39,7 +39,7 @@ export default class Lifecycle extends Component {
 
     //-----------------------COMPONENT DID MOUNT--------------------
     //Không viết arrow function với "componentDidMount = ()=>{}". Chạy duy nhất làn render thứ 1
-    //Thường dùng để xử lý việc call API, setState, timeOut
+    //Thường dùng để xử lý việc call API, setState, timeOut,DOM dữ liệu...
     componentDidMount() {
         console.log("componentDidMount run")
         this.fetchPosts();
@@ -50,7 +50,7 @@ export default class Lifecycle extends Component {
 
     //-----------------------COMPONENT DID UPDATE--------------------
     //Hàm này chạy sau mỗi lần update (hoặc lần render thứ 2 trở đi)
-    /*Sử dụng giá trí state hoặc props mới để thực hiện hành động nào đó như :
+    /*Sử dụng giá trị state hoặc props mới để thực hiện hành động nào đó như :
         -Sd giá trị props mới để setState
         -Sd giá trị state/props mới để call API
     */
