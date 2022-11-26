@@ -26,32 +26,40 @@ import Page404 from './pages/Page404/Page404';
 import FormCreateProduct from './pages/Form/FormCreateProduct';
 import Lifecycle from './pages/Lifecycle/Lifecycle';
 import Store from './pages/StoreAPI/Store';
-
+//import redux store
+import { Provider } from 'react-redux'
+import { store } from './redux/configStore'
+import ReduxDemo from './ReduxDemo/ReduxDemo';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 //JSX
 root.render(
-  <BrowserRouter>
-    <Routes>
-      {/* localhost:3000 */}
-      {/* Lưu ý trong HomeTemplate cos OutLet để render cái thẻ router ở dưới */}
-      <Route path='' element={<HomeTemplate />}>
-        <Route index element={<Home />} />
-        {/* localhost:3000/home */}
-        <Route path='home' element={<Home />} />
-        {/* localhost:3000/login */}
-        <Route path='login' element={<Login />} />
-        {/* localhost:3000/register */}
-        <Route path='register' element={<Register />} />
-        {/* localhost:3000/excarstore */}
-        {/* <Route path='excarstore' element={<ExerciseCarStore />} /> */}
-        <Route path='btgiohang' element={<BaiTapGioHang />} />
-        <Route path='Page404' element={<Page404 />} />
-        {/* <Route path='*' element={<Navigate to="/Page404" />} /> */}
-        <Route path='Form' element={<FormCreateProduct />} />
-        <Route path='lifecycle' element={<Lifecycle />} />
-        <Route path="store" element={<Store />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
+  <>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          {/* localhost:3000 */}
+          {/* Lưu ý trong HomeTemplate cos OutLet để render cái thẻ router ở dưới */}
+          <Route path='' element={<HomeTemplate />}>
+            <Route index element={<Home />} />
+            {/* localhost:3000/home */}
+            <Route path='home' element={<Home />} />
+            {/* localhost:3000/login */}
+            <Route path='login' element={<Login />} />
+            {/* localhost:3000/register */}
+            <Route path='register' element={<Register />} />
+            {/* localhost:3000/excarstore */}
+            {/* <Route path='excarstore' element={<ExerciseCarStore />} /> */}
+            <Route path='btgiohang' element={<BaiTapGioHang />} />
+            <Route path='Page404' element={<Page404 />} />
+            {/* <Route path='*' element={<Navigate to="/Page404" />} /> */}
+            <Route path='Form' element={<FormCreateProduct />} />
+            <Route path='lifecycle' element={<Lifecycle />} />
+            <Route path="store" element={<Store />} />
+            <Route path='reduxdemo' element={<ReduxDemo />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
+  </>
 )

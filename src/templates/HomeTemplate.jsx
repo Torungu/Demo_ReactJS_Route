@@ -7,9 +7,8 @@ export default class HomeTemplate extends Component {
         return (
             //Sử dụng outlet để import các file trong <Route></Route>
             <div>
-
                 <Header />
-                <div style={{ minHeight: 650 }}>
+                <div style={{ minHeight: 500 }}>
                     <Outlet />
                 </div>
                 <footer className='text-center p-5 bg-dark text-white'>Safe Trip !!</footer>
